@@ -13,15 +13,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-	params: { locale },
 }: Readonly<{
 	children: React.ReactNode
-	params: { locale: Locale }
 }>) {
-	useLocaleRedirect(locale)
-
 	return (
-		<html lang={locale} className={`${nunitoSans} ${trueno}`}>
+		<html lang="en" className={`${nunitoSans} ${trueno}`}>
 			<ThemeProvider theme={Theme}>
 				<CssBaseline />
 				<body>{children}</body>
