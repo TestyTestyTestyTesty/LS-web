@@ -1,0 +1,17 @@
+{
+	"collectionName": "components_atom_tags",
+	"info": {
+		"displayName": "tag"
+	},
+	"options": {},
+	"attributes": {
+		"text": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "customField",
+			"regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+			"customField": "plugin::color-picker.color"
+		}
+	}
+}

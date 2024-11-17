@@ -1,0 +1,18 @@
+{
+	"collectionName": "components_atom_infographic_points",
+	"info": {
+		"displayName": "InfographicPoint"
+	},
+	"options": {},
+	"attributes": {
+		"text": {
+			"type": "string"
+		},
+		"Image": {
+			"allowedTypes": ["images"],
+			"type": "media",
+			"multiple": false,
+			"required": true
+		}
+	}
+}

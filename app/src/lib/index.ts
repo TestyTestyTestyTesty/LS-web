@@ -1,0 +1,7 @@
+export { adjustIconsToEvenRows } from "./adjustIconsToEvenRows"
+export { globalConfig } from "./globalconfig"
+export { splitIconsArray } from "./splitIconsArray"
+export { useBreakpoints } from "./useBreakpoints"
+export { useLocaleRedirect } from "./useLocalRedirect"
+export { useSlidesPerView } from "./useSlidesPerView"
+export { localesEnum, breakpointsEnum } from "./enums"

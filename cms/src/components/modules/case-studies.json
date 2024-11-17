@@ -1,0 +1,25 @@
+{
+	"collectionName": "components_modules_case_studies",
+	"info": {
+		"displayName": "CaseStudies",
+		"description": ""
+	},
+	"options": {},
+	"attributes": {
+		"subtitle": {
+			"type": "string"
+		},
+		"title": {
+			"type": "customField",
+			"options": {
+				"preset": "default"
+			},
+			"customField": "plugin::ckeditor5.CKEditor"
+		},
+		"caseStudySlide": {
+			"type": "component",
+			"repeatable": true,
+			"component": "modules.case-study-slide"
+		}
+	}
+}

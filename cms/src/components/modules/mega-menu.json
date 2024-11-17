@@ -1,0 +1,41 @@
+{
+	"collectionName": "components_modules_mega_menus",
+	"info": {
+		"displayName": "megaMenu"
+	},
+	"options": {},
+	"attributes": {
+		"lightAccent": {
+			"type": "customField",
+			"regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+			"customField": "plugin::color-picker.color"
+		},
+		"darkAccent": {
+			"type": "customField",
+			"regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+			"customField": "plugin::color-picker.color"
+		},
+		"highlightSection": {
+			"type": "component",
+			"repeatable": false,
+			"component": "modules.mega-menu-highlight"
+		},
+		"listsType1": {
+			"type": "component",
+			"repeatable": true,
+			"component": "modules.list-type1",
+			"max": 2,
+			"min": 2
+		},
+		"listType2": {
+			"type": "component",
+			"repeatable": false,
+			"component": "modules.list-type2"
+		},
+		"bottomSection": {
+			"type": "component",
+			"repeatable": false,
+			"component": "modules.mega-menu-bottom-section"
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"collectionName": "components_atom_label_icons",
+	"info": {
+		"displayName": "LabelIcons"
+	},
+	"options": {},
+	"attributes": {
+		"text": {
+			"type": "string"
+		},
+		"icon": {
+			"allowedTypes": ["images"],
+			"type": "media",
+			"multiple": false,
+			"required": true
+		}
+	}
+}

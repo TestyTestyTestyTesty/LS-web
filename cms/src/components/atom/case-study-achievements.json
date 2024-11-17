@@ -1,0 +1,15 @@
+{
+	"collectionName": "components_atom_case_study_achievements",
+	"info": {
+		"displayName": "CaseStudyAchievements"
+	},
+	"options": {},
+	"attributes": {
+		"topText": {
+			"type": "string"
+		},
+		"bottomText": {
+			"type": "string"
+		}
+	}
+}

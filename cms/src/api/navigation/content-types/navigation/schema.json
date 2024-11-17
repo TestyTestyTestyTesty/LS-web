@@ -1,0 +1,28 @@
+{
+	"kind": "singleType",
+	"collectionName": "navigations",
+	"info": {
+		"singularName": "navigation",
+		"pluralName": "navigations",
+		"displayName": "navigation"
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {
+		"i18n": {
+			"localized": true
+		}
+	},
+	"attributes": {
+		"menuLinks": {
+			"pluginOptions": {
+				"i18n": {
+					"localized": true
+				}
+			},
+			"type": "dynamiczone",
+			"components": ["atom.link", "modules.mega-menu"]
+		}
+	}
+}

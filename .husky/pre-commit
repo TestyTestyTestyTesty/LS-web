@@ -1,0 +1,2 @@
+yarn lint-staged
+echo "✅ Your changes are okay!"

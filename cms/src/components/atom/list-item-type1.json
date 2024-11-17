@@ -1,0 +1,27 @@
+{
+	"collectionName": "components_atom_list_item_type1s",
+	"info": {
+		"displayName": "listItemType1",
+		"description": ""
+	},
+	"options": {},
+	"attributes": {
+		"icon": {
+			"type": "media",
+			"multiple": false,
+			"required": false,
+			"allowedTypes": ["images"]
+		},
+		"title": {
+			"type": "string",
+			"required": true
+		},
+		"link": {
+			"type": "string",
+			"required": true
+		},
+		"subtitle": {
+			"type": "string"
+		}
+	}
+}

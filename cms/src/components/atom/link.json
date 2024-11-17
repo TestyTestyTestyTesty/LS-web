@@ -1,0 +1,15 @@
+{
+	"collectionName": "components_atom_links",
+	"info": {
+		"displayName": "link"
+	},
+	"options": {},
+	"attributes": {
+		"text": {
+			"type": "string"
+		},
+		"href": {
+			"type": "string"
+		}
+	}
+}

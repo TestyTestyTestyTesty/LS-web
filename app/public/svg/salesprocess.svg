@@ -1,0 +1,11 @@
+<svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="salesprocess">
+<path id="Vector 188" d="M3 7V5C3 4.44772 3.44772 4 4 4H8C8.55228 4 9 4.44772 9 5V7" stroke="#24293B"/>
+<path id="Vector 189" d="M15 11V13C15 13.5523 14.5523 14 14 14H10C9.44772 14 9 13.5523 9 13V11" stroke="#24293B"/>
+<rect id="Rectangle 308" x="1" y="7" width="4" height="4" rx="0.5" stroke="#24293B"/>
+<rect id="Rectangle 309" x="7" y="7" width="4" height="4" rx="0.5" stroke="#24293B"/>
+<rect id="Rectangle 310" x="13" y="7" width="4" height="4" rx="0.5" stroke="#24293B"/>
+<path id="Vector 190" d="M15 7V1" stroke="#24293B"/>
+<path id="Vector 191" d="M13 3L14.9293 1.07071C14.9683 1.03166 15.0317 1.03166 15.0707 1.07071L17 3" stroke="#24293B"/>
+</g>
+</svg>

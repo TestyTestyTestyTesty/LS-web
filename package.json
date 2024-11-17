@@ -1,0 +1,71 @@
+{
+	"author": "Łukasz Rozbicki <l.rozbicki@livespace.io>, Michał Tyszko <m.tyszko@livespace.io>, Tomasz Sikora <t.sikora@livespace.io>",
+	"description": "A monorepo containing multiple micro apps for the monolit project.",
+	"engines": {
+		"node": "20.18.0"
+	},
+	"homepage": "https://bitbucket.org/livespace/website/src/main/",
+	"license": "UNLICENSED",
+	"main": "README.md",
+	"name": "website",
+	"packageManager": "yarn@4.4.0",
+	"private": true,
+	"repository": "git@bitbucket.org:livespace/website.git",
+	"version": "0.0.0",
+	"workspaces": [
+		"app",
+		"cms",
+		"docs",
+		"proof-of-concepts/*"
+	],
+	"dependencies": {
+		"react": "18",
+		"react-dom": "18"
+	},
+	"devDependencies": {
+		"@svgr/webpack": "8.1.0",
+		"@typescript-eslint/eslint-plugin": "8.2.0",
+		"@typescript-eslint/parser": "8.2.0",
+		"commitizen": "4.3.0",
+		"cz-conventional-changelog": "3.3.0",
+		"eslint": "9.10.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-import": "2.30.0",
+		"eslint-plugin-prettier": "5.2.1",
+		"eslint-plugin-react": "7.36.0",
+		"eslint-plugin-react-hooks": "4.6.2",
+		"eslint-plugin-react-refresh": "0.4.11",
+		"husky": "9.1.4",
+		"lint-staged": "15.2.9",
+		"prettier": "3.3.3",
+		"serve": "14.2.3"
+	},
+	"resolutions": {
+		"@radix-ui/react-dismissable-layer": "^1.0.5"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"scripts": {
+		"prepare": "husky",
+		"commit": "cz",
+		"app:dev": "yarn workspace app dev",
+		"app:build": "yarn workspace app build",
+		"app:start": "yarn workspace app start",
+		"app:lint": "yarn workspace app lint",
+		"docs:dev": "yarn workspace docs storybook",
+		"docs:build": "yarn workspace docs build-storybook",
+		"cms:dev": "yarn workspace cms develop"
+	},
+	"lint-staged": {
+		"*.{js,ts,tsx}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"*.{json,md,css,scss}": [
+			"prettier --write"
+		]
+	}
+}

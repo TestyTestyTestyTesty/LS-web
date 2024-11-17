@@ -1,0 +1,23 @@
+{
+	"collectionName": "components_modules_list_type1s",
+	"info": {
+		"displayName": "listType1",
+		"description": ""
+	},
+	"options": {},
+	"attributes": {
+		"title": {
+			"type": "string"
+		},
+		"listItems": {
+			"type": "component",
+			"repeatable": true,
+			"component": "atom.list-item-type1"
+		},
+		"link": {
+			"type": "component",
+			"repeatable": false,
+			"component": "atom.link"
+		}
+	}
+}
