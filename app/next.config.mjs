@@ -1,15 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	async rewrites() {
-		return {
-			fallback: [
-				{
-					source: "/:path*",
-					destination: `${process.env.LIVESPACE_URL}/:path*`,
-				},
-			],
-		}
-	},
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
 		const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.(".svg"))
