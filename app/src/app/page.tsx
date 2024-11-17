@@ -1,81 +1,47 @@
 "use client"
-import {
-	Banner,
-	CaseStudies,
-	Cta,
-	Footer,
-	Hero,
-	Infographic,
-	Logos,
-	NavBar,
-	ScrollSection,
-	Stats,
-} from "@components"
-import {
-	bannerMock,
-	caseStudiesMock,
-	ctaMock,
-	footerMock,
-	heroMock,
-	infographicMock,
-	logosMock,
-	navbarMock,
-	scrollSectionMock,
-	statsSectionMock,
-} from "@mocks"
+import { Components } from "@components"
+
+import { FormEvent, useState } from "react"
 
 export default function Home() {
-	const { buttonLabel, title, lead, tiles, description } = statsSectionMock
+	const [isAuthenticated, setIsAuthenticated] = useState(false)
+	const [password, setPassword] = useState("")
 
+	const handleSubmit = (e: FormEvent) => {
+		e.preventDefault()
+		if (password === "asd") {
+			setIsAuthenticated(true)
+		} else {
+			alert("Incorrect Password")
+		}
+	}
 	return (
 		<>
-			<NavBar links={navbarMock.links} buttons={navbarMock.buttons} />
-			<main>
-				<Hero
-					subheading={heroMock.subheading}
-					heading={heroMock.heading}
-					subtitle={heroMock.subtitle}
-					buttons={heroMock.buttons}
-					playButton={heroMock.playButton}
-					labelIcons={heroMock.labelIcons}
-					backgroundImage={heroMock.backgroundImage}
-				/>
-				<ScrollSection {...scrollSectionMock} />
-				<Logos title={logosMock.title} icons={logosMock.icons} />
-				<Infographic
-					title={infographicMock.title}
-					subtitle={infographicMock.subtitle}
-					points={infographicMock.points}
-				/>
-				<Stats
-					title={title}
-					lead={lead}
-					tiles={tiles}
-					buttonLabel={buttonLabel}
-					description={description}
-				/>
-				<CaseStudies
-					subheading={caseStudiesMock.subheading}
-					heading={caseStudiesMock.heading}
-					caseStudies={caseStudiesMock.caseStudies}
-				/>
-				<Cta
-					subheading={ctaMock.subheading}
-					heading={ctaMock.heading}
-					buttons={ctaMock.buttons}
-					labelIcons={ctaMock.labelIcons}
-					icons={ctaMock.icons}
-				/>
-				<Banner
-					caption={bannerMock.caption}
-					subheading={bannerMock.subheading}
-					heading={bannerMock.heading}
-					button={bannerMock.button}
-					participants={bannerMock.participants}
-					backgroundCards={bannerMock.backgroundCards}
-				/>
-			</main>
-			<Footer top={footerMock.top} middle={footerMock.middle} bottom={footerMock.bottom} />
+			{!isAuthenticated && (
+				<form onSubmit={handleSubmit}>
+					<div>
+						<input
+							type="password"
+							placeholder="Enter Password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+							style={{ padding: "10px", fontSize: "16px" }}
+						/>
+					</div>
+					<button
+						type="submit"
+						style={{
+							marginTop: "10px",
+							padding: "10px 20px",
+							fontSize: "16px",
+							cursor: "pointer",
+						}}
+					>
+						Submit
+					</button>
+				</form>
+			)}
+			{isAuthenticated && <Components />}
 		</>
 	)
 }
