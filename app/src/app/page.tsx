@@ -4,7 +4,7 @@ import { Components } from "@components"
 import { FormEvent, useState } from "react"
 
 export default function Home() {
-	const [isAuthenticated, setIsAuthenticated] = useState(true)
+	const [isAuthenticated, setIsAuthenticated] = useState(false)
 	const [password, setPassword] = useState("")
 
 	const handleSubmit = (e: FormEvent) => {
