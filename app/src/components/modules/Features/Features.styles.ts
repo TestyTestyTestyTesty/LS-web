@@ -6,6 +6,7 @@ export const FeaturesWrapper = styled(Box, {
 })(({ theme }) => ({
 	backgroundColor: theme.palette.lsPrimary.p1100,
 	margin: "0 auto",
+	overflow: "hidden",
 	[theme.breakpoints.up(breakpointsEnum.LG)]: {
 		backgroundImage: "url(/features-green-line.svg)",
 		backgroundSize: "100% 60%",

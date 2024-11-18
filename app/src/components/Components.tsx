@@ -30,7 +30,7 @@ import {
 const { buttonLabel, title, lead, tiles, description } = statsSectionMock
 export const Components = () => {
 	return (
-		<div>
+		<>
 			<NavBar links={navbarMock.links} buttons={navbarMock.buttons} />
 			<main>
 				<Hero
@@ -90,6 +90,6 @@ export const Components = () => {
 				/>
 			</main>
 			<Footer top={footerMock.top} middle={footerMock.middle} bottom={footerMock.bottom} />
-		</div>
+		</>
 	)
 }
