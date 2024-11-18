@@ -19,11 +19,11 @@ export const FooterTop = ({ socialLinks }: FooterTopProps) => {
 				<FooterTopContent>
 					<LangMenuDropdown languages={languagesData} />
 					<FooterTopIcons>
-						<FooterTopIconLink href={socialLinks[0]}>
-							<Facebook />
-						</FooterTopIconLink>
 						<FooterTopIconLink href={socialLinks[1]}>
 							<Linkedin />
+						</FooterTopIconLink>
+						<FooterTopIconLink href={socialLinks[0]}>
+							<Facebook />
 						</FooterTopIconLink>
 						<FooterTopIconLink href={socialLinks[2]}>
 							<Youtube />

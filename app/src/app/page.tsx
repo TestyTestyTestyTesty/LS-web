@@ -9,7 +9,7 @@ export default function Home() {
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
-		if (password === "asd") {
+		if (password === "ls-web") {
 			setIsAuthenticated(true)
 		} else {
 			alert("Incorrect Password")

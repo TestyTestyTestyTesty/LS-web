@@ -1,7 +1,9 @@
-import { ContainerLarge, LivespaceStatus, Logo } from "@components"
-import { Typography, useMediaQuery, useTheme } from "@mui/material"
-import { breakpointsEnum } from "@lib"
+import { ContainerLarge, Logo } from "@components"
+import { FakeLivespaceStatus } from "@components/atoms/FakeLivespaceStatus/FakeLivespaceStatus"
+import { useBreakpoints } from "@lib"
+import { Typography, useTheme } from "@mui/material"
 import Link from "next/link"
+import { useId } from "react"
 import {
 	FooterBottomContent,
 	FooterBottomCopyright,
@@ -10,11 +12,10 @@ import {
 	FooterBottomWrapper,
 } from "./FooterBottom.styles"
 import type { FooterBottomProps } from "./FooterBottom.types"
-import { useId } from "react"
 
-export const FooterBottom = ({ links, copyright }: FooterBottomProps) => {
+export const FooterBottom = ({ links, copyright, status }: FooterBottomProps) => {
 	const theme = useTheme()
-	const isTablet = useMediaQuery(theme.breakpoints.down(breakpointsEnum.LG))
+	const { isTabletWide } = useBreakpoints()
 	return (
 		<FooterBottomWrapper>
 			<ContainerLarge>
@@ -36,7 +37,9 @@ export const FooterBottom = ({ links, copyright }: FooterBottomProps) => {
 							</Link>
 						))}
 					</FooterBottomLinks>
-					{!isTablet && <LivespaceStatus darkMode size="sm" />}
+					{!isTabletWide && (
+						<FakeLivespaceStatus color={theme.palette.defaultColors.white} status={status} />
+					)}
 				</FooterBottomContent>
 			</ContainerLarge>
 		</FooterBottomWrapper>

@@ -11,7 +11,9 @@ export const MegaMenuBottomSectionWrapper = styled(Box, {
 	justifyContent: "space-between",
 	borderTop: `1px solid ${theme.palette.lsGrey.g400}`,
 	paddingTop: "0.8rem",
+	marginBottom: "-0.75rem",
 	[theme.breakpoints.down(breakpointsEnum.XL)]: {
+		marginBottom: "0",
 		border: "none",
 		padding: "1.5rem 0 2rem",
 		flexDirection: "column",

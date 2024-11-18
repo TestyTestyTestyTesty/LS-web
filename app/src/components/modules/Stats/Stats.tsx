@@ -1,8 +1,6 @@
 import { Container, ContentHeaderWrapper, DefaultButton, StatsTile } from "@components"
-import { useTheme } from "@mui/material"
-
 import { useBreakpoints } from "@lib"
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useTheme } from "@mui/material"
 import { StatsContent, StatsTilesWrapper } from "./Stats.styles"
 import type { StatsProps } from "./Stats.types"
 
@@ -14,11 +12,15 @@ export const Stats = ({ title, buttonLabel, tiles, lead, description }: StatsPro
 		<Container>
 			<StatsContent>
 				<ContentHeaderWrapper sideLineColor={theme.palette.lsGrey.g200}>
-					<Typography variant={isTablet ? "h6Mobile" : "h6"} sx={{ marginBottom: "2rem" }}>
+					<Typography
+						component="p"
+						variant={isTablet ? "h6Mobile" : "h6"}
+						sx={{ marginBottom: "2rem" }}
+					>
 						{title.toUpperCase()}
 					</Typography>
 
-					<Typography component="span" variant={isTablet ? "h2Mobile" : "h2"}>
+					<Typography component="h2" variant={isTablet ? "h2Mobile" : "h2"}>
 						{lead}
 					</Typography>
 				</ContentHeaderWrapper>

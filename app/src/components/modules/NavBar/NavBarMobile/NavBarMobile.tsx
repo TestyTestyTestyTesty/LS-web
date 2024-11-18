@@ -60,7 +60,7 @@ export const NavBarMobile = ({ links, buttons }: NavBarProps) => {
 		</NavBarMobileButtons>
 	)
 	return (
-		<>
+		<nav>
 			<NavBarMobileOuterWrapper>
 				<Container>
 					<NavBarMobileTop>
@@ -117,6 +117,6 @@ export const NavBarMobile = ({ links, buttons }: NavBarProps) => {
 				)}
 			</NavBarMobileOuterWrapper>
 			<Backdrop open={isMenuOpened} onClick={handleClose} sx={{ zIndex: 1300 }} />
-		</>
+		</nav>
 	)
 }

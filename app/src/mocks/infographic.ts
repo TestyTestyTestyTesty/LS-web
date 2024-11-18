@@ -24,7 +24,7 @@ export const infographicMock = {
 			},
 		},
 		{
-			title: "The manager optimizes the process based on CRM insights.",
+			title: "Manager optimizes the process based on CRM insights.",
 			image: {
 				url: "/step-4.webp",
 				alt: "step-4-alt",

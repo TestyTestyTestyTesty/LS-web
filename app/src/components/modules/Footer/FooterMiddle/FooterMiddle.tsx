@@ -1,6 +1,7 @@
-import { ContainerLarge, HighlightedItem, ListType3, LivespaceStatus } from "@components"
-import { Typography, useMediaQuery, useTheme } from "@mui/material"
-import { breakpointsEnum } from "@lib"
+import { ContainerLarge, HighlightedItem, ListType3 } from "@components"
+import { FakeLivespaceStatus } from "@components/atoms/FakeLivespaceStatus/FakeLivespaceStatus"
+import { useBreakpoints } from "@lib"
+import { Typography, useTheme } from "@mui/material"
 import { useId } from "react"
 import {
 	FooterMiddleContent,
@@ -11,26 +12,37 @@ import {
 } from "./FooterMiddle.styles"
 import type { FooterMiddleProps } from "./FooterMiddle.types"
 
-export const FooterMiddle = ({ lists, highlightedContent }: FooterMiddleProps) => {
+export const FooterMiddle = ({ lists, highlightedContent, status }: FooterMiddleProps) => {
 	const theme = useTheme()
-	const isTablet = useMediaQuery(theme.breakpoints.down(breakpointsEnum.LG))
+	const { isTabletWide } = useBreakpoints()
+
+	const highlightedItems = (
+		<>
+			{highlightedContent.links.map((item) => (
+				<HighlightedItem {...item} key={useId()} />
+			))}
+		</>
+	)
 	return (
 		<FooterMiddleWrapper>
 			<ContainerLarge>
 				<FooterMiddleContent>
-					{isTablet && <LivespaceStatus size="sm" />}
+					{isTabletWide && (
+						<FakeLivespaceStatus color={theme.palette.defaultColors.black} status={status} />
+					)}
 					<FooterMiddleLists>
 						{lists.map((list) => (
 							<ListType3 title={list.title} items={list.items} key={useId()} />
 						))}
 					</FooterMiddleLists>
+
 					<FooterMiddleHighlightedWrapper>
-						<Typography variant={isTablet ? "h6" : "h5"}>{highlightedContent.title}</Typography>
-						<FooterMiddleHighlightedItems>
-							{highlightedContent.links.map((item) => (
-								<HighlightedItem {...item} key={useId()} />
-							))}
-						</FooterMiddleHighlightedItems>
+						<Typography variant={isTabletWide ? "h5" : "h6"}>{highlightedContent.title}</Typography>
+						{isTabletWide ? (
+							<FooterMiddleHighlightedItems>{highlightedItems}</FooterMiddleHighlightedItems>
+						) : (
+							<>{highlightedItems}</>
+						)}
 					</FooterMiddleHighlightedWrapper>
 				</FooterMiddleContent>
 			</ContainerLarge>

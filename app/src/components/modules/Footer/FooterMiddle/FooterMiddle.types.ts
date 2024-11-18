@@ -2,6 +2,7 @@ import type { HighlightedItemProps } from "@components/atoms/HighlightedItem/Hig
 import type { ListType3Props } from "@components/modules/Lists/ListType3/ListType3.types"
 
 export interface FooterMiddleProps {
+	status: string
 	lists: ListType3Props[]
 	highlightedContent: FooterMiddleHighlightedContentProps
 }

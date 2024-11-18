@@ -1,5 +1,5 @@
-import { AccordionDetails, AccordionSummary, Box, Link, styled, Typography } from "@mui/material"
 import { breakpointsEnum } from "@lib"
+import { AccordionDetails, AccordionSummary, Box, Link, styled, Typography } from "@mui/material"
 
 export const MegaMenuMobileWrapper = styled(Box, {
 	name: "MegaMenuMobileWrapper",
@@ -13,14 +13,26 @@ export const MegaMenuMobileListsType1Wrapper = styled(Box, {
 	display: "flex",
 	flexDirection: "column",
 	gap: "1rem",
-	[theme.breakpoints.up(breakpointsEnum.MD)]: {
+	[theme.breakpoints.down(breakpointsEnum.XL)]: {
+		display: "grid",
+		gridTemplateColumns: "repeat(2, 1fr)",
 		flexDirection: "row",
 		gap: "1.75rem",
 	},
-	"& > *:not(:last-child)": {
-		paddingBottom: "3rem",
-		position: "relative",
-		borderBottom: `1px solid ${theme.palette.lsGrey.g400}`,
+	[theme.breakpoints.down(breakpointsEnum.MD)]: {
+		display: "flex",
+		flexDirection: "column",
+		gap: "1.75rem",
+	},
+}))
+
+export const MegaMenuMobileListType1Wrapper = styled(Box, {
+	name: "MegaMenuMobileListType1Wrapper",
+})(({ theme }) => ({
+	[theme.breakpoints.down(breakpointsEnum.MD)]: {
+		"&:not(:last-of-type)": {
+			borderBottom: `1px solid ${theme.palette.lsGrey.g400}`,
+		},
 	},
 }))
 

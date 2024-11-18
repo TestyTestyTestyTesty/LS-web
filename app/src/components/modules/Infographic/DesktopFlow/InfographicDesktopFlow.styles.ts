@@ -5,30 +5,36 @@ import Image from "next/image"
 export const InfographicDesktopFlowWrapper = styled(Box, {
 	name: "InfographicDesktopFlowWrapper",
 })({
-	paddingBottom: "5rem",
-	paddingLeft: "1.5rem",
+	marginBottom: "5rem",
+	marginLeft: "1.5rem",
+	position: "relative",
 })
 
 export const InfographicDesktopFlowImageContainer = styled(Box, {
 	name: "InfographicDesktopFlowImageContainer",
 })(({ theme }) => ({
-	position: "relative",
+	position: "absolute",
+	top: 0,
+	left: 0,
+	bottom: 0,
+	right: 0,
+	margin: "auto",
 	width: "34.5rem",
 	height: "13.5rem",
-	margin: "-14.5rem auto 0",
 	zIndex: 1,
 	"&:before": {
 		content: "''",
 		position: "absolute",
 		top: 0,
 		left: 0,
+		bottom: 0,
+		right: 0,
 		margin: "auto",
 		width: "34.5rem",
 		height: "8rem",
 		background: theme.palette.lsPrimary.p1200,
 		zIndex: -1,
 		borderRadius: "1rem",
-		transform: "translateY(25%)",
 	},
 }))
 

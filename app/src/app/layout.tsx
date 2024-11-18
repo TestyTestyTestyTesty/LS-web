@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material/styles"
 import { nunitoSans, Theme, trueno } from "@styles"
 import "@styles/globals.css"
 import type { Metadata } from "next"
+import type { ReactNode } from "react"
 
 export const metadata: Metadata = {
 	title: "Livespace",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children,
 }: Readonly<{
-	children: React.ReactNode
+	children: ReactNode
 }>) {
 	return (
 		<html lang="en" className={`${nunitoSans} ${trueno}`}>

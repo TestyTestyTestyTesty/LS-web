@@ -12,7 +12,7 @@ import { useBreakpoints } from "@lib"
 import { useId } from "react"
 
 export const CaseStudies = ({ subheading, heading, caseStudies }: CaseStudiesProps) => {
-	const { isTablet } = useBreakpoints()
+	const { isTablet, isMobileWide } = useBreakpoints()
 
 	const caseStudyCards = caseStudies.map((caseStudy) => (
 		<CaseStudyCard key={useId()} {...caseStudy} />
@@ -30,6 +30,7 @@ export const CaseStudies = ({ subheading, heading, caseStudies }: CaseStudiesPro
 			</Container>
 			<Carousel
 				cards={caseStudyCards}
+				carouselProps={{ navigation: !isMobileWide, pagination: isTablet }}
 				slidesPerView={{
 					xxs: 1.4,
 					xs: 1.4,

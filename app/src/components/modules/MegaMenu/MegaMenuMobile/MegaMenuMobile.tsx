@@ -18,6 +18,7 @@ import {
 	MegaMenuMobileAccordionSummary,
 	MegaMenuMobileListsType1Wrapper,
 	MegaMenuMobileListsWrapper,
+	MegaMenuMobileListType1Wrapper,
 	MegaMenuMobileWrapper,
 } from "./MegaMenuMobile.styles"
 
@@ -56,14 +57,15 @@ export const MegaMenuMobile = ({
 					<MegaMenuMobileListsWrapper>
 						<MegaMenuMobileListsType1Wrapper>
 							{lists.map((list) => (
-								<ListType1
-									key={useId()}
-									listTitle={list.title}
-									listItems={list.items}
-									link={list.link}
-									lightAccent={lightAccent}
-									darkAccent={darkAccent}
-								/>
+								<MegaMenuMobileListType1Wrapper key={useId()}>
+									<ListType1
+										listTitle={list.title}
+										listItems={list.items}
+										link={list.link}
+										lightAccent={lightAccent}
+										darkAccent={darkAccent}
+									/>
+								</MegaMenuMobileListType1Wrapper>
 							))}
 						</MegaMenuMobileListsType1Wrapper>
 					</MegaMenuMobileListsWrapper>

@@ -8,12 +8,12 @@ import type { NavBarProps } from "./NavBar.types"
 export const NavBar = ({ links, buttons }: NavBarProps) => {
 	const { isTabletWide } = useBreakpoints()
 	return (
-		<>
+		<header>
 			{isTabletWide ? (
 				<NavBarMobile links={links} buttons={buttons} />
 			) : (
 				<NavBarDesktop links={links} buttons={buttons} />
 			)}
-		</>
+		</header>
 	)
 }

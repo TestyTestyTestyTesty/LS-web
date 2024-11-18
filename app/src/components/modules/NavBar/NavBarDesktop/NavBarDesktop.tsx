@@ -30,7 +30,7 @@ export const NavBarDesktop = ({ links, buttons }: NavBarProps) => {
 		setOpenedMenuIndex(null)
 	}
 	return (
-		<>
+		<nav>
 			<NavBarDesktopOuterWrapper>
 				<Container>
 					<NavBarDesktopWrapper>
@@ -69,6 +69,6 @@ export const NavBarDesktop = ({ links, buttons }: NavBarProps) => {
 				</Container>
 			</NavBarDesktopOuterWrapper>
 			<Backdrop open={openedMenuIndex !== null} onClick={handleClose} sx={{ zIndex: 1300 }} />
-		</>
+		</nav>
 	)
 }

@@ -20,13 +20,13 @@ const pulse = keyframes`
 
 const getBottomPosition = (pointPosition: number): string => {
 	const bottomPositionMap: { [key: number]: string } = {
-		1: "8.4rem",
-		2: "19.5rem",
-		3: "19.5rem",
-		4: "19.5rem",
+		1: "9.4rem",
+		2: "20.5rem",
+		3: "20.5rem",
+		4: "20.5rem",
 	}
 
-	return bottomPositionMap[pointPosition] || "8.4rem"
+	return bottomPositionMap[pointPosition] || "9.4rem"
 }
 
 const getLeftPosition = (pointPosition: number): string => {

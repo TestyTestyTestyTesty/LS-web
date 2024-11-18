@@ -16,7 +16,7 @@ export const FooterMiddleContent = styled(Box, {
 	display: "flex",
 	flexDirection: "column",
 	gap: "2rem",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
+	[theme.breakpoints.down(breakpointsEnum.XL)]: {
 		flexDirection: "column-reverse",
 		gap: "4rem",
 	},
@@ -28,26 +28,25 @@ export const FooterMiddleLists = styled(Box, {
 	display: "grid",
 	gridTemplateColumns: "repeat(4, 1fr)",
 	gap: "1.25rem",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
+	[theme.breakpoints.down(breakpointsEnum.XL)]: {
 		gridTemplateColumns: "repeat(2, 1fr)",
 		gap: "3rem 1.5rem",
 	},
 	[theme.breakpoints.down(breakpointsEnum.MD)]: {
 		gridTemplateColumns: "1fr",
-		gap: "4rem",
+		gap: "3rem",
 	},
 }))
 
 export const FooterMiddleHighlightedWrapper = styled(Box, {
 	name: "FooterMiddleHighlightedWrapper",
 })(({ theme }) => ({
-	display: "flex",
-	justifyContent: "space-between",
-	alignItems: "center",
-	gap: "5rem",
+	display: "grid",
+	gridTemplateColumns: "repeat(4, 1fr)",
+	gap: "1.25rem",
 	width: "100%",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
-		alignItems: "flex-start",
+	[theme.breakpoints.down(breakpointsEnum.XL)]: {
+		display: "flex",
 		flexDirection: "column",
 		gap: "2rem",
 	},
@@ -60,7 +59,7 @@ export const FooterMiddleHighlightedItems = styled(Box, {
 	gridTemplateColumns: "repeat(3, 17.8rem)",
 	gap: "1.25rem",
 	[theme.breakpoints.down(breakpointsEnum.XL)]: {
-		gridTemplateColumns: "repeat(3, 15rem)",
+		gridTemplateColumns: "repeat(3, 1fr)",
 	},
 	[theme.breakpoints.down(breakpointsEnum.LG)]: {
 		gridTemplateColumns: "repeat(2, 1fr)",

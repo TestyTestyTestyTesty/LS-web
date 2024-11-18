@@ -1,6 +1,7 @@
 "use client"
 import { breakpointsEnum } from "@lib"
 import { Box, styled } from "@mui/material"
+
 import Image from "next/image"
 
 export const BannerWrapper = styled(Box, {

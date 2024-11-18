@@ -2,10 +2,14 @@ import React from "react"
 import type { ConditionalLinkWrapperProps } from "./ConditionalLinkWrapper.types"
 import Link from "next/link"
 
-export const ConditionalLinkWrapper = ({ href, children }: ConditionalLinkWrapperProps) => {
+export const ConditionalLinkWrapper = ({
+	href,
+	shouldWrap,
+	children,
+}: ConditionalLinkWrapperProps) => {
 	return (
 		<>
-			{href ? (
+			{shouldWrap && href ? (
 				<Link href={href} style={{ textDecoration: "none" }}>
 					{children}
 				</Link>

@@ -118,8 +118,10 @@ export const footerMock = {
 				},
 			],
 		},
+		status: "All system operational",
 	},
 	bottom: {
+		status: "All system operational",
 		copyright: "2024 Livespace Sp. z o.o.",
 		links: [
 			{
