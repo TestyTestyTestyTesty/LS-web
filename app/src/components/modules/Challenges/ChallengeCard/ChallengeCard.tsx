@@ -44,7 +44,7 @@ export const ChallengeCard = ({
 			<ChallengeHeaderContainer>
 				<Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
 					<Image src={icon.url} alt={icon.alt} width={40} height={40} />
-					<Typography variant={isTablet ? "p1Mobile" : "p1"}>{heading.toUpperCase()}</Typography>
+					<Typography variant={isTablet ? "p1Mobile" : "h6"}>{heading.toUpperCase()}</Typography>
 				</Box>
 				<Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
 					<Typography variant={isTablet ? "h3Mobile" : "h3"}>{subheading}</Typography>

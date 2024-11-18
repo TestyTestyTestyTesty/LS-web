@@ -18,11 +18,19 @@ export const Challenges = ({ heading, subheading, challenges }: ChallengesProps)
 			<Container>
 				<ChallengesInsideWrapper>
 					<ContentHeaderWrapper sideLineColor={theme.palette.lsGrey.g200}>
-						<Typography variant={isTablet ? "h6Mobile" : "h6"} component="p">
+						<Typography
+							variant={isTablet ? "h6" : "h6Mobile"}
+							component="p"
+							sx={{ paddingBottom: "1rem" }}
+						>
 							{heading.toUpperCase()}
 						</Typography>
 
-						<Typography component="h2" variant={isTablet ? "h2Mobile" : "h2"}>
+						<Typography
+							variant={isTablet ? "h2" : "h2Mobile"}
+							component="h2"
+							sx={{ maxWidth: "36rem" }}
+						>
 							{subheading}
 						</Typography>
 					</ContentHeaderWrapper>

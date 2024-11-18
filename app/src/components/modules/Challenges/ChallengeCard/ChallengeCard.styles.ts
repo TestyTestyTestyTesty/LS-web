@@ -8,6 +8,6 @@ export const ChallengeHeaderContainer = styled(Box, {
 })({
 	display: "flex",
 	flexDirection: "column",
-	gap: 3,
+	gap: "1rem",
 	maxWidth: 588,
 })
