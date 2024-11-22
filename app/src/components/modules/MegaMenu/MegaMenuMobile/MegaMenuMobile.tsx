@@ -1,6 +1,5 @@
 "use client"
 
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import { Accordion, Box } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import { useId } from "react"
@@ -12,6 +11,7 @@ import {
 	MegaMenuHighlightSectionSmall,
 } from "@components"
 
+import { ArrowDown } from "@svg/ReactComponents/ArrowDown"
 import type { MegaMenuProps } from "../MegaMenu.types"
 import {
 	MegaMenuMobileAccordionDetails,
@@ -43,7 +43,7 @@ export const MegaMenuMobile = ({
 					},
 				}}
 			>
-				<MegaMenuMobileAccordionSummary expandIcon={<ExpandMoreIcon />} id={`panel-${title} `}>
+				<MegaMenuMobileAccordionSummary expandIcon={<ArrowDown />} id={`panel-${title} `}>
 					<Typography variant="label3">{title}</Typography>
 				</MegaMenuMobileAccordionSummary>
 				<MegaMenuMobileAccordionDetails>

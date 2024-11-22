@@ -1,17 +1,18 @@
-import { IconArrow } from "@svg/ReactComponents/IconArrow"
 import Link from "next/link"
 import { useState } from "react"
+
+import { useBreakpoints } from "@lib"
+import { useTheme } from "@mui/material"
 import {
+	ListType3ArrowItemIcon,
 	ListType3ArrowItemTitle,
 	ListType3ArrowItemTitleWrapper,
 } from "./ListType3ArrowItem.styles"
-import { useMediaQuery, useTheme } from "@mui/material"
-import { breakpointsEnum } from "@lib"
 import type { ListType3ArrowItemProps } from "./ListType3ArrowItem.types"
 export const ListType3ArrowItem = ({ href, text }: ListType3ArrowItemProps) => {
 	const [isHovered, setIsHovered] = useState(false)
 	const theme = useTheme()
-	const isTablet = useMediaQuery(theme.breakpoints.down(breakpointsEnum.LG))
+	const { isTablet } = useBreakpoints()
 	return (
 		<Link
 			href={href}
@@ -23,7 +24,12 @@ export const ListType3ArrowItem = ({ href, text }: ListType3ArrowItemProps) => {
 				<ListType3ArrowItemTitle variant={isTablet ? "h5" : "h6"} isHovered={isHovered}>
 					{text}
 				</ListType3ArrowItemTitle>
-				<IconArrow isHovered={isHovered} />
+				<ListType3ArrowItemIcon
+					isHovered={isHovered}
+					sx={{ fontSize: "20px" }}
+					customColor={theme.palette.defaultColors.black}
+					hoverColor={theme.palette.lsPrimary.p400}
+				/>
 			</ListType3ArrowItemTitleWrapper>
 		</Link>
 	)

@@ -14,7 +14,22 @@ export const ListType3List = styled(List, {
 	padding: 0,
 	display: "flex",
 	flexDirection: "column",
-	gap: "1rem",
+	gap: "1.2rem",
+})
+
+export const ListType3ItemWrapperInnerWrapper = styled(Box, {
+	name: "ListType3ItemWrapperInnerWrapper",
+})({
+	position: "relative",
+})
+
+export const ListType3ItemTag = styled(Box, {
+	name: "ListType3ItemTag",
+})({
+	position: "absolute",
+	top: "-2px",
+	left: "110%",
+	width: "max-content",
 })
 
 export const ListType3Title = styled(Typography, {

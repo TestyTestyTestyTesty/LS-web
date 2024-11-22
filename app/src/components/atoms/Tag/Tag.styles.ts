@@ -9,4 +9,5 @@ export const TagWrapper = styled(Box, {
 	backgroundColor: backgroundColor ? backgroundColor : theme.palette.lsPrimary.p200,
 	borderRadius: "0.125rem",
 	width: "fit-content",
+	alignItems: "center",
 }))

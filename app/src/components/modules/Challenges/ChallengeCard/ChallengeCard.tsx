@@ -48,14 +48,16 @@ export const ChallengeCard = ({
 				</Box>
 				<Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
 					<Typography variant={isTablet ? "h3Mobile" : "h3"}>{subheading}</Typography>
-					<Typography variant={isTablet ? "p1Mobile" : "p1"}>{description}</Typography>
+					<Typography variant={isTablet ? "p1Mobile" : "p1"} sx={{ maxWidth: "34rem" }}>
+						{description}
+					</Typography>
 				</Box>
 			</ChallengeHeaderContainer>
 			<MotionBox
 				initial="hidden"
 				animate={controls}
 				variants={imageVariants}
-				sx={{ maxWidth: 566, maxHeight: 500, overflow: "hidden" }}
+				sx={{ maxWidth: "35.375rem", maxHeight: "31.25rem", overflow: "hidden" }}
 			>
 				<Image src={image.url} alt={image.alt} width={566} height={500} layout="responsive" />
 			</MotionBox>

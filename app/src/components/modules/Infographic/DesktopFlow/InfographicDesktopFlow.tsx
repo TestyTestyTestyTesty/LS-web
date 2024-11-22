@@ -38,8 +38,8 @@ export const InfographicDesktopFlow = ({ points }: { points: InfographicPointPro
 						fade={fade}
 						src={imgUrl}
 						alt={imgAlt}
-						width="550"
-						height="140"
+						width="552"
+						height="166"
 						quality={100}
 					/>
 				</InfographicDesktopFlowImageContainer>

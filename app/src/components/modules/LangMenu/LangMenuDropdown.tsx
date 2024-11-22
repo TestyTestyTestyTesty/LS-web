@@ -1,19 +1,19 @@
 "use client"
-import { useState } from "react"
-import LanguageIcon from "@mui/icons-material/Language"
-import { Tooltip, Typography } from "@mui/material"
 import { NavButton } from "@components"
+import { localesEnum } from "@lib"
+import { Globe } from "@svg/ReactComponents/Globe"
+import type { Language } from "@types"
 import { useParams, usePathname, useRouter } from "next/navigation"
+import { useState } from "react"
 import type { LangMenuProps } from "./LangMenu.types"
 import {
-	LangMenuContainer,
 	LangMenuButton,
+	LangMenuContainer,
+	StyledCheckIcon,
 	StyledMenu,
 	StyledMenuItem,
-	StyledCheckIcon,
+	StyledMenuTypography,
 } from "./LangMenuDropdown.styles"
-import type { Language } from "@types"
-import { localesEnum } from "@lib"
 
 export const LangMenuDropdown = ({ languages, disabled = false }: LangMenuProps) => {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -44,17 +44,15 @@ export const LangMenuDropdown = ({ languages, disabled = false }: LangMenuProps)
 	return (
 		<>
 			<LangMenuContainer disabled={disabled}>
-				<Tooltip title={selectedLanguage.languageCode} placement="bottom">
-					<LangMenuButton
-						aria-controls={open ? "lang-menu" : undefined}
-						aria-haspopup="true"
-						aria-expanded={open ? "true" : undefined}
-						onClick={!disabled ? handleToggle : undefined}
-					>
-						<LanguageIcon fontSize="small" />
-						<NavButton label={selectedLanguage.languageCode} />
-					</LangMenuButton>
-				</Tooltip>
+				<LangMenuButton
+					aria-controls={open ? "lang-menu" : undefined}
+					aria-haspopup="true"
+					aria-expanded={open ? "true" : undefined}
+					onClick={!disabled ? handleToggle : undefined}
+				>
+					<Globe />
+					<NavButton label={selectedLanguage.languageCode} showHoverStyles={false} />
+				</LangMenuButton>
 			</LangMenuContainer>
 			<StyledMenu
 				anchorEl={anchorEl}
@@ -64,6 +62,7 @@ export const LangMenuDropdown = ({ languages, disabled = false }: LangMenuProps)
 				disableScrollLock={true}
 				transformOrigin={{ horizontal: "center", vertical: "top" }}
 				anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
+				sx={{ zIndex: "1301" }}
 			>
 				{languages.map((language) => (
 					<StyledMenuItem
@@ -72,8 +71,13 @@ export const LangMenuDropdown = ({ languages, disabled = false }: LangMenuProps)
 						onClick={() => handleMenuClose(language)}
 						disableRipple
 					>
-						<StyledCheckIcon selected={language.locale === selectedLanguage.locale} />
-						<Typography>{language.itemName}</Typography>
+						{language.locale === selectedLanguage.locale && <StyledCheckIcon />}
+						<StyledMenuTypography
+							variant="navBtn"
+							isSelected={language.locale === selectedLanguage.locale}
+						>
+							{language.itemName}
+						</StyledMenuTypography>
 					</StyledMenuItem>
 				))}
 			</StyledMenu>

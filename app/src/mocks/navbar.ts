@@ -14,7 +14,7 @@ export const navbarMock = {
 						href: "/placeholder-link",
 						title: "Zobacz więcej",
 					},
-					imageUrl: "/highlight-section-image.png",
+					imageUrl: "/left-section-image.webp",
 				},
 				lists: [
 					{
@@ -144,7 +144,7 @@ export const navbarMock = {
 						href: "/placeholder-link",
 						title: "Zobacz więcej",
 					},
-					imageUrl: "/highlight-section-image.png",
+					imageUrl: "/left-section-image-2.png",
 				},
 				lists: [
 					{

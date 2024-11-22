@@ -1,7 +1,7 @@
 "use client"
 
 import {
-	Container,
+	ContainerLarge,
 	DefaultButton,
 	LangMenuDropdown,
 	Logo,
@@ -9,9 +9,10 @@ import {
 	NavButton,
 	NavLink,
 } from "@components"
+import { useClickOutside } from "@lib/useClickOutsideChecker"
 import { languagesData } from "@mocks"
 import { Backdrop } from "@mui/material"
-import { Fragment, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import type { NavBarProps } from "../NavBar.types"
 import {
 	NavBarDesktopLeftSection,
@@ -23,16 +24,31 @@ import {
 
 export const NavBarDesktop = ({ links, buttons }: NavBarProps) => {
 	const [openedMenuIndex, setOpenedMenuIndex] = useState<number | null>(null)
+
 	const handleMenuOpen = (index: number) => {
-		setOpenedMenuIndex(index)
+		if (openedMenuIndex === index) {
+			handleClose()
+		} else {
+			setOpenedMenuIndex(index)
+		}
 	}
 	const handleClose = () => {
 		setOpenedMenuIndex(null)
 	}
+	const { ref, isClickedOutside } = useClickOutside<HTMLDivElement>(() => {
+		handleClose()
+	})
+	useEffect(() => {
+		isClickedOutside && handleClose()
+		return () => {
+			handleClose()
+		}
+	}, [isClickedOutside])
+
 	return (
 		<nav>
 			<NavBarDesktopOuterWrapper>
-				<Container>
+				<ContainerLarge>
 					<NavBarDesktopWrapper>
 						<NavBarDesktopLeftSection>
 							<NavBarDesktopLogoWrapper>
@@ -42,7 +58,7 @@ export const NavBarDesktop = ({ links, buttons }: NavBarProps) => {
 								"megaMenu" in link ? (
 									<Fragment key={index}>
 										<NavButton label={link.title} onClick={() => handleMenuOpen(index)} />
-										{openedMenuIndex === index && <MegaMenuDesktop {...link.megaMenu} />}
+										{openedMenuIndex === index && <MegaMenuDesktop {...link.megaMenu} ref={ref} />}
 									</Fragment>
 								) : (
 									<NavLink key={index} label={link.title} href={link.href} />
@@ -66,7 +82,7 @@ export const NavBarDesktop = ({ links, buttons }: NavBarProps) => {
 							/>
 						</NavBarDesktopRightSection>
 					</NavBarDesktopWrapper>
-				</Container>
+				</ContainerLarge>
 			</NavBarDesktopOuterWrapper>
 			<Backdrop open={openedMenuIndex !== null} onClick={handleClose} sx={{ zIndex: 1300 }} />
 		</nav>

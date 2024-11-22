@@ -5,10 +5,9 @@ export interface ScrollSectionProps {
 	heading: string
 	description: string
 	button: Link
-	background: Image
 	listItems: {
 		title: string
 		description: string
+		icon: Image
 	}[]
-	icons: Image[]
 }

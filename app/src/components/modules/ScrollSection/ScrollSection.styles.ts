@@ -1,20 +1,16 @@
 "use client"
 import { breakpointsEnum } from "@lib"
-import type { Theme } from "@mui/material"
 import { Box, styled } from "@mui/material"
-import { InView } from "react-intersection-observer"
 
 export const ScrollSectionContent = styled(Box, {
 	name: "ScrollSectionContent",
 })(({ theme }) => ({
 	padding: "5rem 0",
 	display: "flex",
-	flexDirection: "column",
 	gap: "4.25rem",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
-		gap: "1.5rem",
-	},
+	justifyContent: "space-between",
 	[theme.breakpoints.down(breakpointsEnum.MD)]: {
+		flexDirection: "column",
 		gap: "4rem",
 		padding: "4rem 0 5rem",
 	},
@@ -24,8 +20,41 @@ export const ScrollSectionTop = styled(Box, {
 	name: "ScrollSectionTop",
 })(({ theme }) => ({
 	maxWidth: "36rem",
+	position: "sticky",
+	top: "6rem",
+	paddingLeft: "1.5rem",
+	marginBottom: "12.5rem",
+	height: "fit-content",
+	width: "100%",
 	[theme.breakpoints.down(breakpointsEnum.XL)]: {
-		maxWidth: "20rem",
+		maxWidth: "30rem",
+	},
+	[theme.breakpoints.down(breakpointsEnum.MD)]: {
+		marginBottom: 0,
+		position: "static",
+	},
+	"&:before": {
+		content: "''",
+		width: "1px",
+		background: theme.palette.lsPrimary.p400,
+		height: "100%",
+		position: "absolute",
+		top: 0,
+		left: "0",
+		[theme.breakpoints.down(breakpointsEnum.MD)]: {
+			left: "0",
+		},
+	},
+	"&:after": {
+		content: "' '",
+		width: "0.6rem",
+		height: "0.6rem",
+		background: theme.palette.lsPrimary.p400,
+		top: 0,
+		left: "-0.6rem",
+		position: "absolute",
+		borderRadius: "50%",
+		transform: "translateX(55%)",
 	},
 }))
 
@@ -36,83 +65,9 @@ export const ScrollSectionBottom = styled(Box, {
 	display: "flex",
 	justifyContent: "space-between",
 	gap: "2rem",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
-		justifyContent: "flex-end",
-	},
 	[theme.breakpoints.down(breakpointsEnum.MD)]: {
 		justifyContent: "flex-start",
 	},
-}))
-
-export const ScrollSectionImageWrapper = styled(Box, {
-	name: "ScrollSectionImageWrapper",
-})(({ theme }) => ({
-	display: "flex",
-	marginLeft: "2rem",
-	width: "33.5rem",
-	height: "33.5rem",
-	position: "sticky",
-	top: "100px",
-	[theme.breakpoints.down(breakpointsEnum.XL)]: {
-		width: "28.125rem",
-		height: "28.125rem",
-	},
-}))
-
-const getIconSpecificStyles = (position: number, theme: Theme) => {
-	switch (position) {
-		case 0:
-			return {
-				top: "10%",
-				left: "2%",
-				borderRadius: "0.5rem",
-			}
-		case 1:
-			return { top: "65%", left: "0%", borderRadius: "0.5rem" }
-		case 2:
-			return {
-				bottom: "30%",
-				right: "-10%",
-				borderRadius: "5rem",
-				[theme.breakpoints.down(breakpointsEnum.XL)]: {
-					right: "0",
-				},
-			}
-		case 3:
-			return {
-				top: "49%",
-				right: "4%",
-				boxShadow: "none",
-				[theme.breakpoints.down(breakpointsEnum.XL)]: {
-					top: "47.7%",
-					right: "4.2%",
-				},
-			}
-		default:
-			return {
-				bottom: "0%",
-				right: "0",
-				borderRadius: "0.5rem",
-				[theme.breakpoints.down(breakpointsEnum.XL)]: {
-					bottom: "-10%",
-				},
-			}
-	}
-}
-
-export const ScrollSectionIconWrapper = styled(Box, {
-	name: "ScrollSectionIconWrapper",
-	shouldForwardProp: (prop) => prop !== "iconPosition" && prop !== "isVisible",
-})<{ iconPosition: number; isVisible: boolean }>(({ theme, iconPosition, isVisible }) => ({
-	position: "absolute",
-	opacity: isVisible ? 1 : 0,
-	transition: "all 0.3s ease-in",
-	transform: isVisible ? "scale(1)" : "scale(0.5)",
-	transitionDelay: iconPosition === 2 ? "0.5s" : "0s",
-	display: "flex",
-	overflow: "hidden",
-	boxShadow: "0px 1.5rem 2.5rem 0px rgba(36, 41, 59, 0.15)",
-	...getIconSpecificStyles(iconPosition, theme),
 }))
 
 export const ScrollContentLists = styled(Box, {
@@ -121,15 +76,19 @@ export const ScrollContentLists = styled(Box, {
 	width: "100%",
 	maxWidth: "28rem",
 	marginTop: "17rem",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
+	[theme.breakpoints.down(breakpointsEnum.XL)]: {
+		maxWidth: "unset",
+	},
+	[theme.breakpoints.down(breakpointsEnum.MD)]: {
 		marginTop: 0,
 		maxWidth: "20rem",
 	},
 }))
 
-export const ScrollContentList = styled(InView, {
+export const ScrollContentList = styled(Box, {
 	name: "ScrollContentList",
-})(({ theme }) => ({
+	shouldForwardProp: (prop) => prop !== "iamgeUrl",
+})<{ imageUrl: string }>(({ theme, imageUrl }) => ({
 	display: "flex",
 	flexDirection: "column",
 	gap: "2rem",
@@ -150,22 +109,33 @@ export const ScrollContentList = styled(InView, {
 		top: "1rem",
 		left: "0",
 		position: "absolute",
+		[theme.breakpoints.down(breakpointsEnum.MD)]: {
+			top: 0,
+		},
 	},
 	"&:after": {
 		content: "' '",
-		width: "0.6rem",
-		height: "0.6rem",
+		width: "4.5rem",
+		height: "4.5rem",
 		background: theme.palette.lsPrimary.p400,
-		top: "1rem",
+		backgroundImage: `url(${imageUrl})`,
+		backgroundSize: "40px",
+		backgroundPosition: "center",
+		backgroundRepeat: "no-repeat",
+		top: "-1rem",
 		left: "0rem",
 		position: "absolute",
 		borderRadius: "50%",
-		transform: "translateX(-45%)",
-		[theme.breakpoints.down(breakpointsEnum.LG)]: {
-			top: "0.5rem",
+		transform: "translateX(-50%)",
+		[theme.breakpoints.down(breakpointsEnum.MD)]: {
+			top: "0",
+			transform: "translateX(-45%)",
+			width: "0.6875rem",
+			height: "0.6875rem",
+			backgroundImage: "none",
 		},
 	},
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
+	[theme.breakpoints.down(breakpointsEnum.MD)]: {
 		paddingLeft: "1.5rem",
 		paddingBottom: "3rem",
 	},

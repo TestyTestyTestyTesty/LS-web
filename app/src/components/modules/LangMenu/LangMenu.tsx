@@ -1,8 +1,8 @@
 "use client"
 import { localesEnum } from "@lib"
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
-import LanguageIcon from "@mui/icons-material/Language"
 import { Typography } from "@mui/material"
+import { ArrowDown } from "@svg/ReactComponents/ArrowDown"
+import { Globe } from "@svg/ReactComponents/Globe"
 import type { Language } from "@types"
 import { useParams, usePathname, useRouter } from "next/navigation"
 import {
@@ -46,9 +46,9 @@ export const LangMenu = ({ languages }: LangMenuProps) => {
 					},
 				}}
 			>
-				<LangMenuAccordionSummary expandIcon={<ExpandMoreIcon />}>
+				<LangMenuAccordionSummary expandIcon={<ArrowDown />}>
 					<LangMenuAccordionSummaryWrapper>
-						<LanguageIcon fontSize="small" />
+						<Globe />
 						<Typography variant="h6Mobile">{selectedLanguage.itemName}</Typography>
 					</LangMenuAccordionSummaryWrapper>
 				</LangMenuAccordionSummary>

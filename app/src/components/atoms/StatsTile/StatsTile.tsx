@@ -25,7 +25,7 @@ export const StatsTile = ({ title, stats, message, background }: StatsTileProps)
 			</Typography>
 			<Typography
 				color={white}
-				variant={isTablet ? "caption1Mobile" : "p1"}
+				variant={isTablet ? "caption1MobileBold" : "p1"}
 				textAlign="center"
 				sx={{ maxWidth: "11.25rem", padding: "0 1rem" }}
 			>

@@ -93,6 +93,7 @@ export type CustomTypographyVariants =
 	| "label3"
 	| "caption1"
 	| "caption1Mobile"
+	| "caption1MobileBold"
 	| "caption2"
 	| "caption3"
 	| "playBtn"
@@ -279,6 +280,11 @@ const theme = createTheme({
 		label3: { ...commonStyles, fontSize: "1.0625rem", lineHeight: "1.5rem", fontWeight: 700 },
 		caption1: { ...commonStyles, fontSize: "1rem", fontWeight: 700 },
 		caption1Mobile: {
+			...commonStyles,
+			fontSize: "0.8125rem",
+			lineHeight: "1.125rem",
+		},
+		caption1MobileBold: {
 			...commonStyles,
 			fontSize: "0.8125rem",
 			lineHeight: "1.125rem",

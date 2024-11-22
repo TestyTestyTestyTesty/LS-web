@@ -5,4 +5,5 @@ export type ArrowLinkProps = {
 	href: string
 	typographyVariant?: TypographyTypeMap["props"]["variant"]
 	color?: string
+	hoverColor?: string
 }

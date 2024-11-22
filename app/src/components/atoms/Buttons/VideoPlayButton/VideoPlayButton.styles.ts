@@ -10,12 +10,12 @@ export const VideoPlayButtonWrapper = styled(Box, {
 	alignItems: "center",
 	display: "flex",
 	gap: "1rem",
-	filter: "drop-shadow(0px var(--24, 1.5rem) var(--40, 2.5rem) rgba(9, 9, 22, 0.15))",
-	transition: "filter 0.3s",
+	boxShadow: "0px var(--24, 1.5rem) var(--40, 2.5rem) rgba(9, 9, 22, 0.15)",
+	transition: "box-shadow 0.3s",
 	cursor: "pointer",
 	"&:hover": {
 		background: theme.palette.lsGrey.g50,
-		filter: "drop-shadow(0px var(--24, 1.5rem) 2.5rem rgba(9, 9, 22, 0.30))",
+		boxShadow: "0px var(--24, 1.5rem) 2.5rem rgba(9, 9, 22, 0.30)",
 	},
 }))
 

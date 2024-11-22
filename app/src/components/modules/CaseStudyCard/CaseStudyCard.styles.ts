@@ -52,7 +52,7 @@ export const CaseStudyCardTagsWrapper = styled(Box, {
 	gap: "4.8rem",
 	alignItems: "center",
 	[theme.breakpoints.down(breakpointsEnum.XL)]: {
-		gap: "1rem",
+		gap: "0.8rem",
 		alignItems: "flex-start",
 		flexDirection: "column",
 	},
@@ -63,7 +63,7 @@ export const CaseStudyCardIndustryWrapper = styled(Box, {
 })(({ theme }) => ({
 	display: "flex",
 	gap: "0.5rem",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
+	[theme.breakpoints.down(breakpointsEnum.MD)]: {
 		gap: "0.2rem",
 		flexDirection: "column",
 	},
@@ -101,6 +101,7 @@ export const CaseStudyCardBottom = styled(Box, {
 	display: "flex",
 	flexDirection: "column",
 	flex: 1,
+	justifyContent: "space-between",
 	[theme.breakpoints.up(breakpointsEnum.MD)]: {
 		padding: "1.5rem",
 		gap: "1.5rem",
@@ -110,7 +111,7 @@ export const CaseStudyCardBottom = styled(Box, {
 		padding: "2.5rem",
 	},
 	[theme.breakpoints.down(breakpointsEnum.MD)]: {
-		padding: "1rem",
+		padding: "1rem 1rem 1.5rem",
 		justifyContent: "space-between",
 		gap: "0.5rem",
 	},
@@ -121,12 +122,10 @@ export const CaseStudyCardBottomWrapper = styled(Box, {
 })(({ theme }) => ({
 	display: "flex",
 	flexDirection: "column",
-	[theme.breakpoints.up(breakpointsEnum.MD)]: {
-		maxWidth: "70%",
+	gap: "2.5rem",
+	maxWidth: "70%",
+	[theme.breakpoints.down(breakpointsEnum.XL)]: {
 		gap: "1.5rem",
-	},
-	[theme.breakpoints.up(breakpointsEnum.XL)]: {
-		gap: "2.5rem",
 	},
 	[theme.breakpoints.down(breakpointsEnum.MD)]: {
 		maxWidth: "100%",
@@ -136,14 +135,11 @@ export const CaseStudyCardBottomWrapper = styled(Box, {
 
 export const CaseStudyCardOutcomes = styled(Box, {
 	name: "CaseStudyCardOutcomes",
-})(({ theme }) => ({
+})({
 	display: "grid",
-	gridTemplateColumns: "repeat(3, 13.8rem)",
+	gridTemplateColumns: "repeat(3, 1fr)",
 	gap: "2px",
-	[theme.breakpoints.down(breakpointsEnum.LG)]: {
-		gridTemplateColumns: "repeat(3, 7.5rem)",
-	},
-}))
+})
 
 export const CaseStudyCardOutcome = styled(Box, {
 	name: "CaseStudyCardOutcome",

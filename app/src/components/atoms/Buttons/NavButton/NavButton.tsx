@@ -1,14 +1,20 @@
 "use client"
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
-import Typography from "@mui/material/Typography"
-import { useState, useEffect, useRef } from "react"
-import type { NavButtonProps } from "./NavButton.types"
-import { Button, useTheme } from "@mui/material"
 import { breakpointsEnum } from "@lib"
+import { useClickOutside } from "@lib/useClickOutsideChecker"
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import { Button, useTheme } from "@mui/material"
+import Typography from "@mui/material/Typography"
+import { useEffect, useState } from "react"
+import type { NavButtonProps } from "./NavButton.types"
 
-export const NavButton = ({ label, disabled = false, onClick }: NavButtonProps) => {
+export const NavButton = ({
+	label,
+	disabled = false,
+	onClick,
+	showHoverStyles = true,
+}: NavButtonProps) => {
 	const [isRotated, setIsRotated] = useState(false)
-	const buttonRef = useRef<HTMLButtonElement>(null)
+	const { ref: buttonRef, isClickedOutside } = useClickOutside<HTMLButtonElement>()
 
 	const {
 		palette: {
@@ -25,17 +31,8 @@ export const NavButton = ({ label, disabled = false, onClick }: NavButtonProps) 
 	}
 
 	useEffect(() => {
-		function handleClickOutside(mouseEvent: MouseEvent) {
-			if (buttonRef.current && !buttonRef.current.contains(mouseEvent.target as HTMLElement)) {
-				setIsRotated(false)
-			}
-		}
-
-		document.addEventListener("mousedown", handleClickOutside)
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside)
-		}
-	}, [])
+		isClickedOutside && setIsRotated(false)
+	}, [isClickedOutside])
 
 	return (
 		<Button
@@ -52,7 +49,7 @@ export const NavButton = ({ label, disabled = false, onClick }: NavButtonProps) 
 				color: n800,
 				textTransform: "none",
 				"&:hover": {
-					textDecoration: "underline",
+					textDecoration: showHoverStyles ? "underline" : "none",
 					textDecorationColor: n800,
 					textUnderlineOffset: "0.25rem",
 				},
@@ -68,7 +65,7 @@ export const NavButton = ({ label, disabled = false, onClick }: NavButtonProps) 
 				},
 				"&:active": {
 					color: c400,
-					textDecoration: "underline",
+					textDecoration: showHoverStyles ? "underline" : "none",
 					textUnderlineOffset: "0.25rem",
 					textDecorationColor: n800,
 				},

@@ -48,4 +48,6 @@ export const InforgraphicDesktopFlowImage = styled(Image, {
 	zIndex: 1,
 	opacity: fade ? 0 : 1,
 	transition: "opacity 0.3s ease-in",
+	display: "flex",
+	margin: "0 auto",
 }))

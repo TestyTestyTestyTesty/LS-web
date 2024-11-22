@@ -12,6 +12,7 @@ export const ChallengeContainer = forwardRef<HTMLDivElement, { children: ReactNo
 				ref={ref}
 				sx={{
 					display: "flex",
+					gap: "1rem",
 					padding: "2rem",
 					flexDirection: isTablet ? "column" : "row",
 				}}

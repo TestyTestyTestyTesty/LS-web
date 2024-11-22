@@ -45,7 +45,9 @@ export const FooterMiddleHighlightedWrapper = styled(Box, {
 	gridTemplateColumns: "repeat(4, 1fr)",
 	gap: "1.25rem",
 	width: "100%",
+	alignItems: "center",
 	[theme.breakpoints.down(breakpointsEnum.XL)]: {
+		alignItems: "flex-start",
 		display: "flex",
 		flexDirection: "column",
 		gap: "2rem",

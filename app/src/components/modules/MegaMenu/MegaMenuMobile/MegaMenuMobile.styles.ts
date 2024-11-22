@@ -31,6 +31,7 @@ export const MegaMenuMobileListType1Wrapper = styled(Box, {
 })(({ theme }) => ({
 	[theme.breakpoints.down(breakpointsEnum.MD)]: {
 		"&:not(:last-of-type)": {
+			paddingBottom: "1.5rem",
 			borderBottom: `1px solid ${theme.palette.lsGrey.g400}`,
 		},
 	},

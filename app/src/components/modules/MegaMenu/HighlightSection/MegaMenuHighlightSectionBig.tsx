@@ -34,11 +34,18 @@ export const MegaMenuHighlightSectionBig = ({
 						title={highlightSection.link.title}
 						href={highlightSection.link.href}
 						color={darkAccent}
+						hoverColor={darkAccent}
 					/>
 				</Box>
 			)}
 			{highlightSection.imageUrl && (
-				<Image src={highlightSection.imageUrl} width="252" height="130" alt="image" />
+				<Image
+					src={highlightSection.imageUrl}
+					width="252"
+					height="130"
+					alt="image"
+					style={{ objectFit: "contain" }}
+				/>
 			)}
 		</HighlightSectionWrapper>
 	)

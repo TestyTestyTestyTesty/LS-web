@@ -27,8 +27,9 @@ import {
 	statsSectionMock,
 	challengesMock,
 } from "@mocks"
-const { buttonLabel, title, lead, tiles, description } = statsSectionMock
+
 export const Components = () => {
+	const { buttonLabel, title, lead, tiles, description } = statsSectionMock
 	return (
 		<div>
 			<NavBar links={navbarMock.links} buttons={navbarMock.buttons} />

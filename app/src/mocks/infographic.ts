@@ -5,35 +5,35 @@ export const infographicMock = {
 		{
 			title: "Map the company sales process or pick a proposed one.",
 			image: {
-				url: "/step-1.webp",
+				url: "/step-1.png",
 				alt: "step-1-alt",
 			},
 		},
 		{
 			title: "The sales team follows a repeatable process.",
 			image: {
-				url: "/step-2.webp",
+				url: "/step-2.png",
 				alt: "step-2-alt",
 			},
 		},
 		{
 			title: "The CRM analyzes actions impacting key sales metrics.",
 			image: {
-				url: "/step-3.webp",
+				url: "/step-3.png",
 				alt: "step-3-alt",
 			},
 		},
 		{
-			title: "Manager optimizes the process based on CRM insights.",
+			title: "The manager optimizes the process based on CRM insights.",
 			image: {
-				url: "/step-4.webp",
+				url: "/step-4.png",
 				alt: "step-4-alt",
 			},
 		},
 		{
 			title: "The CRM provides sales forecasts and tips for growth.",
 			image: {
-				url: "/step-5.webp",
+				url: "/step-5.png",
 				alt: "step-5-alt",
 			},
 		},

@@ -12,7 +12,7 @@ import type { MarqueeCarouselProps } from "./MarqueeCarousel.types"
 export const MarqueeCarousel = ({
 	direction,
 	icons,
-	speed = 30,
+	speed = 90,
 	itemGap = 30,
 	itemWidth = 83,
 	itemHeight = 55,

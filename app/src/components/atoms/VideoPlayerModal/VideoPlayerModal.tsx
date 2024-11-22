@@ -11,6 +11,7 @@ export const VideoPlayerModal = ({ open, mediaId, handleClose }: VideoPlayerModa
 			aria-describedby="modal-modal-description"
 			sx={{ zIndex: 1301, width: "100%" }}
 			maxWidth="xl"
+			PaperProps={{ sx: { borderRadius: 0, margin: "1rem", width: "calc(100% - 1rem)" } }}
 			fullWidth
 		>
 			<div

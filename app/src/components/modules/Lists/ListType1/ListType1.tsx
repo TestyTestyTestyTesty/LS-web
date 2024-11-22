@@ -27,7 +27,9 @@ export const ListType1 = ({
 					))}
 				</ListType1List>
 			)}
-			{link && <ArrowLink title={link.title} href={link.href} color={darkAccent} />}
+			{link && (
+				<ArrowLink title={link.title} href={link.href} color={darkAccent} hoverColor={darkAccent} />
+			)}
 		</ListType1Wrapper>
 	)
 }
