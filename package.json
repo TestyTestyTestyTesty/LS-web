@@ -2,13 +2,12 @@
 	"author": "Łukasz Rozbicki <l.rozbicki@livespace.io>, Michał Tyszko <m.tyszko@livespace.io>, Tomasz Sikora <t.sikora@livespace.io>",
 	"description": "A monorepo containing multiple micro apps for the monolit project.",
 	"engines": {
-		"node": "20.18.0"
+		"node": "20.18.1"
 	},
 	"homepage": "https://bitbucket.org/livespace/website/src/main/",
 	"license": "UNLICENSED",
 	"main": "README.md",
 	"name": "website",
-	"packageManager": "yarn@4.4.0",
 	"private": true,
 	"repository": "git@bitbucket.org:livespace/website.git",
 	"version": "0.0.0",
